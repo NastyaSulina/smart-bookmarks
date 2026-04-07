@@ -2,7 +2,7 @@
 
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
-import { FormState, login } from "../../actions";
+import { FormState, login } from "@/app/(pages)/login/actions";
 
 import styles from "./LoginForm.module.css";
 

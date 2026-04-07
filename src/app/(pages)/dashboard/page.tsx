@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import { getSession } from "@/app/lib/session";
 import { Client } from "@/app/types/client";
-import styles from "./styles.module.css";
+import styles from "./page.module.css";
 
 export default async function Dashboard() {
   const session = await getSession();

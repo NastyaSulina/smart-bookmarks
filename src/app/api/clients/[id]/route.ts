@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import "server-only";
 import { z } from "zod";
-import { getClient } from "@/app/lib/clients";
+import { faker } from "@faker-js/faker";
+import { Client } from "@/app/types/client";
 
 const IdSchema = z
   .string()
@@ -23,5 +24,8 @@ export async function GET(
     );
   }
 
-  return NextResponse.json(getClient(id));
+  faker.seed(Number(id));
+  const client: Client = { id, name: faker.person.fullName() };
+
+  return NextResponse.json(client);
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Header } from "@/app/components/Header/Header";
-import "./reset.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Authorization",
