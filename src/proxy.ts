@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/app/lib/session";
+import { getSession } from "@/shared/session";
 
 const protectedRoutes = ["/dashboard"];
 const publicRoutes = ["/login"];
@@ -21,3 +21,7 @@ export default async function proxy(req: NextRequest) {
 
   return NextResponse.next();
 }
+
+export const config = {
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+};

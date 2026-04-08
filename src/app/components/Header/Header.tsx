@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getSession } from "@/app/lib/session";
+import { getSession } from "@/shared/session";
 import { logout } from "@/app/(pages)/login/actions";
 import styles from "./Header.module.css";
 
