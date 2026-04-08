@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
-import { FormState, login } from "@/shared/actions/auth";
+import { FormState, register } from "@/shared/actions/auth";
 import { Button } from "@/shared/ui/Button";
 
-import styles from "./LoginForm.module.css";
+import styles from "./RegisterForm.module.css";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -19,21 +19,21 @@ function SubmitButton() {
       disabled={pending}
       className={styles.submit}
     >
-      {pending ? "Signing in…" : "Sign in"}
+      {pending ? "Creating account…" : "Create account"}
     </Button>
   );
 }
 
-export function LoginForm() {
-  const [state, loginAction] = useActionState(login, {} as FormState);
+export function RegisterForm() {
+  const [state, registerAction] = useActionState(register, {} as FormState);
 
   return (
     <div className={styles.root}>
-      <span className={styles.badge}>✦ welcome back</span>
-      <h1 className={styles.title}>Sign in</h1>
-      <p className={styles.subtitle}>Enter your details to continue</p>
+      <span className={styles.badge}>✦ new here</span>
+      <h1 className={styles.title}>Create an account</h1>
+      <p className={styles.subtitle}>Organize your links with tags and notes</p>
 
-      <form action={loginAction} className={styles.form}>
+      <form action={registerAction} className={styles.form}>
         <label className={styles.label}>
           Email
           <input
@@ -54,8 +54,8 @@ export function LoginForm() {
             type="password"
             name="password"
             id="password"
-            placeholder="••••••••"
-            autoComplete="current-password"
+            placeholder="at least 8 characters"
+            autoComplete="new-password"
           />
         </label>
         {state?.fieldErrors?.password && (
@@ -70,7 +70,7 @@ export function LoginForm() {
       )}
 
       <p className={styles.switchLink}>
-        No account? <Link href="/register">Register</Link>
+        Already have an account? <Link href="/login">Sign in</Link>
       </p>
     </div>
   );

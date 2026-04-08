@@ -1,0 +1,14 @@
+.body {
+  background: var(--color-bg);
+  color: var(--color-dark);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

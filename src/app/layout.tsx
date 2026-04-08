@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Header } from "@/app/components/Header/Header";
 import "./globals.css";
+import styles from "./layout.module.css";
 
 export const metadata: Metadata = {
-  title: "Authorization",
-  description: "Next.js auth demo",
+  title: "Bookmarks",
+  description: "Save links with tags, search instantly, get AI summaries",
 };
 
 export default function RootLayout({
@@ -14,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={styles.body}>
         <Header />
-        {children}
+        <main className={styles.main}>{children}</main>
       </body>
     </html>
   );
