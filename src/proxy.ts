@@ -1,27 +1,27 @@
-import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/shared/session";
+import { NextRequest, NextResponse } from 'next/server'
+import { getSession } from '@/shared/session'
 
-const protectedRoutes = ["/dashboard"];
-const publicRoutes = ["/login"];
+const protectedRoutes = ['/dashboard']
+const publicRoutes = ['/login']
 
 export default async function proxy(req: NextRequest) {
-  const path = req.nextUrl.pathname;
-  const isProtectedRoute = protectedRoutes.includes(path);
-  const isPublicRoute = publicRoutes.includes(path);
+    const path = req.nextUrl.pathname
+    const isProtectedRoute = protectedRoutes.includes(path)
+    const isPublicRoute = publicRoutes.includes(path)
 
-  const session = await getSession();
+    const session = await getSession()
 
-  if (isProtectedRoute && !session?.userId) {
-    return NextResponse.redirect(new URL("/login", req.nextUrl));
-  }
+    if (isProtectedRoute && !session?.userId) {
+        return NextResponse.redirect(new URL('/login', req.nextUrl))
+    }
 
-  if (isPublicRoute && session?.userId) {
-    return NextResponse.redirect(new URL("/dashboard", req.nextUrl));
-  }
+    if (isPublicRoute && session?.userId) {
+        return NextResponse.redirect(new URL('/dashboard', req.nextUrl))
+    }
 
-  return NextResponse.next();
+    return NextResponse.next()
 }
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
-};
+    matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+}

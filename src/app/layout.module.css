@@ -1,14 +1,16 @@
 .body {
-  background: var(--color-bg);
-  color: var(--color-dark);
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  height: auto;
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+    min-height: 100dvh;
+
+    color: var(--color-dark);
+    background: var(--color-bg);
 }
 
 .main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }

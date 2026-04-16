@@ -1,38 +1,47 @@
 .root {
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 8px 40px rgba(153, 176, 237, 0.15), 0 2px 12px rgba(0, 0, 0, 0.06);
-  padding: 2.5rem 2.5rem 2rem;
   width: 100%;
   max-width: 400px;
+  padding: 2.5rem 2.5rem 2rem;
+
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 8px 40px rgb(153 176 237 / 15%), 0 2px 12px rgb(0 0 0 / 6%);
 
   & .badge {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    background: #d4e3ff;
-    color: #3a5dab;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.3rem 0.75rem;
-    border-radius: 50px;
+
     margin-bottom: 1.25rem;
+    padding: 0.3rem 0.75rem;
+
     letter-spacing: 0.04em;
     text-transform: uppercase;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    color: #3a5dab;
+    border-radius: 50px;
+    background: #d4e3ff;
   }
 
   & .title {
+    margin-bottom: 0.375rem;
+
     font-size: 1.875rem;
     font-weight: 700;
-    color: var(--color-dark);
-    margin-bottom: 0.375rem;
     line-height: 1.2;
+
+    color: var(--color-dark);
   }
 
   & .subtitle {
-    font-size: 0.9rem;
-    color: var(--color-muted);
     margin-bottom: 1.75rem;
+
+    font-size: 0.9rem;
+
+    color: var(--color-muted);
   }
 
   & .form {
@@ -44,26 +53,31 @@
       display: flex;
       flex-direction: column;
       gap: 0.375rem;
+
       font-size: 0.875rem;
       font-weight: 600;
+
       color: var(--color-dark);
     }
 
     & input {
+      width: 100%;
       padding: 0.7rem 1rem;
+
+      font-family: inherit;
+      font-size: 0.9375rem;
+
+      color: var(--color-dark);
       border: 2px solid #efe8df;
       border-radius: 10px;
       background: var(--color-bg);
-      color: var(--color-dark);
-      font-family: inherit;
-      font-size: 0.9375rem;
-      width: 100%;
+
       transition: border-color 0.15s;
     }
 
     & input:focus {
-      outline: none;
       border-color: var(--color-blue);
+      outline: none;
     }
 
     & input::placeholder {
@@ -72,37 +86,46 @@
 
     & .submit {
       margin-top: 0.5rem;
+
       background: var(--color-blue) !important;
     }
 
     & .fieldError {
       font-size: 0.8rem;
-      color: #e05252;
       font-weight: 500;
+
+      color: #e05252;
     }
   }
 
   & .formError {
     margin-top: 0.75rem;
-    background: #fff0f0;
+    padding: 0.6rem 0.875rem;
+
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    color: #c0392b;
     border: 1.5px solid #ffd0d0;
     border-radius: 10px;
-    padding: 0.6rem 0.875rem;
-    font-size: 0.875rem;
-    color: #c0392b;
-    font-weight: 500;
+    background: #fff0f0;
   }
 
   & .switchLink {
-    text-align: center;
     margin-top: 1.5rem;
+
+    text-align: center;
+
     font-size: 0.875rem;
+
     color: var(--color-muted);
 
     & a {
-      color: var(--color-blue);
-      font-weight: 700;
       text-decoration: none;
+
+      font-weight: 700;
+
+      color: var(--color-blue);
     }
 
     & a:hover {
